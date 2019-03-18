@@ -34,10 +34,8 @@ spec:
           volumeMounts:
             - mountPath: /etc/config/spark
               name: spark-master-config
-{{- if .Values.debug.enabled }}
             - mountPath: /spark/conf
               name: spark-debug-config
-{{- end }}
 {{- if .Values.volumes }}
 {{ include .Values.volumes.master.volumeMountsTemplate . | indent 12 }}
 {{- end }}
@@ -74,8 +72,6 @@ spec:
         - name: spark-master-config
           configMap:
             name: {{ template "spark.master-name" . }}
-{{- if .Values.debug.enabled }}
         - name: spark-debug-config
           configMap:
             name: {{ .Release.Name }}-spark-debug-config
-{{- end }}

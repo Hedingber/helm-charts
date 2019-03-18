@@ -34,10 +34,8 @@ spec:
           volumeMounts:
             - mountPath: /etc/config/spark
               name: spark-worker-config
-{{- if .Values.debug.enabled }}
             - mountPath: /spark/conf
               name: spark-debug-config
-{{- end }}
 {{- if .Values.volumes }}
 {{ include .Values.volumes.worker.volumeMountsTemplate . | indent 12 }}
 {{- end }}
@@ -73,8 +71,6 @@ spec:
         - name: spark-worker-config
           configMap:
             name: {{ template "spark.worker-name" . }}
-{{- if .Values.debug.enabled }}
         - name: spark-debug-config
           configMap:
             name: {{ .Release.Name }}-spark-debug-config
-{{- end }}

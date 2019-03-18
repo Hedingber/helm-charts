@@ -50,7 +50,6 @@ volumes:
     volumeMountsTemplate: v3io-configs.deployment.volumeMounts
 
 debug:
-  enabled: false
   log: {}
   # com.acme.path: DEBUG
 

@@ -14,7 +14,7 @@ data:
     log4j.appender.stdout=org.apache.log4j.ConsoleAppender
     log4j.appender.stdout.Target=System.out
     log4j.appender.stdout.layout=org.apache.hadoop.log.Log4Json
-    log4j.appender.stdout.layout.LineSeparator=\r\n
+    log4j.appender.stdout.layout.LineSep=\r\n
     # Configure logging levels for specific packages
 {{- range $key, $val := .Values.debug.log }}
 {{ printf "log4j.logger.%s=%s" $key $val | indent 4}}

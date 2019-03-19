@@ -13,8 +13,8 @@ data:
     # Direct log messages to stdout
     log4j.appender.stdout=org.apache.log4j.ConsoleAppender
     log4j.appender.stdout.Target=System.out
-    log4j.appender.stdout.layout=org.apache.hadoop.log.Log4Json
-    org.apache.log4j.Layout.LINE_SEP=\r\n
+    log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+    log4j.appender.stdout.layout.ConversionPattern=[%d{yyyy-MM-dd HH:mm:ss,SSS}] %p %c{1}: %m%n
     # Configure logging levels for specific packages
 {{- range $key, $val := .Values.debug.log }}
 {{ printf "log4j.logger.%s=%s" $key $val | indent 4}}

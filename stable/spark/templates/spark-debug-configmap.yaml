@@ -13,7 +13,7 @@ data:
     # Direct log messages to stdout
     log4j.appender.stdout=org.apache.log4j.ConsoleAppender
     log4j.appender.stdout.Target=System.out
-    log4j.appender.stdout.layout=org.apache.log4j.JsonLayout
+    log4j.appender.stdout.layout=org.apache.hadoop.log.Log4Json
     # Configure logging levels for specific packages
 {{- range $key, $val := .Values.debug.log }}
 {{ printf "log4j.logger.%s=%s" $key $val | indent 4}}

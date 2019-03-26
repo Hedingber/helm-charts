@@ -77,7 +77,7 @@ spec:
               command:
               - /bin/bash
               - {{ .Values.server.config.mapPath }}/health_check.sh
-              - --uri-path=/v1/cluster
+              - --uri-path=v1/cluster
               - --port={{ .Values.server.config.http.port }}
             initialDelaySeconds: 90
             periodSeconds: 1
@@ -86,7 +86,7 @@ spec:
               command:
               - /bin/bash
               - {{ .Values.server.config.mapPath }}/health_check.sh
-              - --uri-path=/v1/cluster
+              - --uri-path=v1/cluster
               - --port={{ .Values.server.config.http.port }}
             initialDelaySeconds: 5
             periodSeconds: 1

@@ -11,7 +11,7 @@ CHART_VERSION_OVERRIDE := $(if $(CHART_VERSION_OVERRIDE),$(CHART_VERSION_OVERRID
 
 
 #### Some exmamples:
-# make print-versions
+# make print-vasddsaadsersions
 # make helm-publish - release all changes from development
 # GITHUB_BRANCH_OVERRIDE=integ_2.8 make helm-publish - release all changes from integ_2.8
 # GITHUB_BRANCH_OVERRIDE=integ_2.8 CHART_NAME=pipelines make helm-publish-stable-specific - release only pipelines from integ_2.8
